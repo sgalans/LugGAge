@@ -1,0 +1,17 @@
+# Dependencias y archivos generados: se reconstruyen con npm.
+node_modules/
+dist/
+dist-ssr/
+coverage/
+*.tsbuildinfo
+
+# Configuración local; las plantillas sin secretos sí se versionan.
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Registros y archivos del sistema operativo.
+*.log
+.DS_Store
+Thumbs.db
