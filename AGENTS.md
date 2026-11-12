@@ -86,16 +86,20 @@ Se descartó React Native/Expo (dependería del ordenador sin pagar los 99 $/añ
 
 ## 9. Pendiente de decidir (pregunta antes de asumir)
 
-- Estructura de carpetas/arquitectura del frontend (la define el usuario).
+- Arquitectura interna del frontend (la define el usuario). Su ubicación en `frontend/` ya está decidida.
 - Si habrá perfiles locales (¿una persona por dispositivo o dispositivo compartido?).
 - Framework de testing del frontend y estrategia de tests.
 - Plataforma de despliegue final (Vercel vs Netlify).
 
 ## 10. Estado actual
 
-- Fase: preparación del entorno; repositorio Git local inicializado en `main`, sin commits todavía.
+- Fase: scaffolding de React + TypeScript + Vite creado en `frontend/`, en la rama `chore/setup-frontend`.
 - Entorno instalado y verificado: Git 2.55.0, nvm-windows 2.0.1, Node.js 26.13.1 LTS y npm 11.20.0. Versión de Node registrada en `.nvmrc`.
 - Identidad de Git configurada para este repositorio. Remoto `origin`: https://github.com/sgalans/LugGAge.git.
-- Pendiente: realizar el primer commit y subir la rama `main` a GitHub.
-- Aún no existe scaffolding de Vite. El MVP no necesita `venv` porque no incluye backend Python.
+- El commit inicial ya existe; las ramas `main`, `develop` y `chore/setup-frontend` están creadas. La rama de trabajo sigue `origin/chore/setup-frontend`.
+- ESLint y Prettier configurados. Comandos disponibles en `frontend/`: `dev`, `build`, `lint`, `format`, `format:check` y `preview`.
+- TypeScript se mantiene en la línea 6.0 por compatibilidad con `typescript-eslint`; la plantilla original incluía TypeScript 7 y Oxlint.
+- Verificados ESLint, compilación y arranque de Vite. Pendiente: revisar y guardar el scaffolding y abrir una PR hacia `develop`.
+- `npm audit` detecta 10 avisos moderados procedentes de `minimatch`, dependencia transitiva de las herramientas de lint. Pendiente de actualización compatible; no se ha aplicado `audit fix --force`.
+- PWA, Dexie, Zustand, arquitectura interna y estrategia de tests siguen pendientes. El MVP no necesita `venv` porque no incluye backend Python.
 - Actualiza esta sección conforme avance el proyecto.
